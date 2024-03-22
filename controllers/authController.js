@@ -127,7 +127,7 @@ const authService = {
       // Verify the email verification token
       const isTokenValid = await emailService.verifyEmailVerificationToken(email, token);
       if (!isTokenValid) {
-        res.redirect('https://soumenmernapp.netlify.app/login').status(200)
+        res.redirect('https://soumenmernapp.netlify.app').status(200)
         return res.status(400).json({ error: 'Invalid or expired token' });
       }
 
@@ -138,7 +138,7 @@ const authService = {
       }
 
       await user.update({ emailVerified: true });
-    res.redirect('https://soumenmernapp.netlify.app/login').status(200)
+    res.redirect('https://soumenmernapp.netlify.app').status(200)
       return res.json({ message: 'Email verified successfully' });
     } catch (error) {
     //   console.error('Error verifying email:', error);
