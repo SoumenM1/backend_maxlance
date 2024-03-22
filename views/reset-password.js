@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const resetToken = urlParams.get('token');
     const email = urlParams.get('email');
-     console.log(email,resetToken)
+    
     // Function to toggle password visibility
     showPasswordCheckbox.addEventListener('change', function() {
         passwordInput.type = this.checked ? 'text' : 'password';

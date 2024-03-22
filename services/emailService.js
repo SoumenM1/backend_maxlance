@@ -80,7 +80,7 @@ const emailService = {
         from: 'wishtofamily@gmail.com',
         to: email,
         subject: 'Password Reset Request',
-        html: `<p>Please click <a href="https://backend-maxlance.onrender.com/reset-password/${resetToken}/?email=${email}">here</a> to reset your password.</p>`
+        html: `<p>Please click <a href="https://backend-maxlance.onrender.com/reset-password/?email=${email}&token=${resetToken}">here</a> to reset your password.</p>`
       };
     
       // Send the email
