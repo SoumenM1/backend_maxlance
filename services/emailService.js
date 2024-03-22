@@ -27,7 +27,7 @@ const emailService = {
         from: 'wishtofamily@gmail.com',
         to: email,
         subject: 'Email Verification',
-        html: `<p>Please click <a href="http://localhost:4000/verify-email/${verificationToken}/?email=${email}">here</a> to verify your email address.</p>`
+        html: `<p>Please click <a href="https://backend-maxlance.onrender.com/verify-email/${verificationToken}/?email=${email}">here</a> to verify your email address.</p>`
       };
       
 
@@ -79,7 +79,7 @@ const emailService = {
         from: 'wishtofamily@gmail.com',
         to: email,
         subject: 'Password Reset Request',
-        html: `<p>Please click <a href="http://localhost:4000/reset-password?token=${resetToken}/?email=${email}">here</a> to reset your password.</p>`
+        html: `<p>Please click <a href="https://backend-maxlance.onrender.com/reset-password?token=${resetToken}/?email=${email}">here</a> to reset your password.</p>`
       };
     
       // Send the email
