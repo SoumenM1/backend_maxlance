@@ -11,8 +11,8 @@ app.use(express.json())
 app.set('view engine', 'ejs');
 
 app.get('/reset-password', (req, res) => {
-    const {token,email}  = req.query;
-    if(!token || !email)return res.json({msg:"params missing"})
+    const email = req.query.email;
+    const token = req.query.token;
     res.render('reset-password',{ token, email }); // Assuming you have a reset-password.ejs file in your views directory
   });
   

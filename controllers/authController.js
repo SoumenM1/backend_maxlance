@@ -90,7 +90,7 @@ const authService = {
 
   async resetPassword(req, res) {
     try {
-      const {email , token , newPassword}  = req.body;
+     const {email , token, newPassword }=req.body
     if(!email || !token || !newPassword) return res.status(400).json({msg:"missing params"})
       // Verify the password reset token
       const isTokenValid = await emailService.verifyPasswordResetToken(email, token);
