@@ -81,16 +81,18 @@ const authService = {
       if(!isSend){
         return res.json({message:"password reset not sent"})
       }
-      return res.json({ message: 'Password reset link sent successfully' });
+      return res.json({ message: 'Password reset link sent successfully',data:true });
     } catch (error) {
     //   console.error('Error initiating password reset:', error);
-      return res.status(500).json({ error: 'Internal Server Error' });
+      return res.status(500).json({ error: 'Internal Server Error',data:false });
     }
   },
 
   async resetPassword(req, res) {
     try {
-      const { email, token, newPassword } = req.body;
+      const token  = req.params.token;
+      const email  = req.query.email;
+      const newPassword=req.body.password;
     if(!email || !token || !newPassword) return res.status(400).json({msg:"missing params"})
       // Verify the password reset token
       const isTokenValid = await emailService.verifyPasswordResetToken(email, token);
@@ -110,7 +112,7 @@ const authService = {
       // Update the password
       await user.update({ password: hashedPassword });
 
-      return  res.json({ message: 'Password reset successfully' });
+      return  res.json({ message: 'Password reset successfully',data:true });
     } catch (error) {
     //   console.error('Error resetting password:', error);
       return res.status(500).json({ error: 'Internal Server Error' });

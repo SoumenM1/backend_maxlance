@@ -7,7 +7,15 @@ const item = require('./routes/item')
 app.use(cors());
 app.use(express.json())
 
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
 
+app.get('/reset-password/:token', (req, res) => {
+    const token  = req.params.token;
+    const email  = req.query.email;
+    res.render('reset-password',{ token, email }); // Assuming you have a reset-password.ejs file in your views directory
+  });
+  
 app.use('/',user)
 app.use('/',item)
 
