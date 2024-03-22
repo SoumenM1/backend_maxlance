@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Call your API to update the password
         try {
-            const response = await fetch(`https://backend-maxlance.onrender.com/reset-password/${resetToken}?email=${email}`, {
+            const response = await fetch(`https://backend-maxlance.onrender.com/reset/${resetToken}?email=${email}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
