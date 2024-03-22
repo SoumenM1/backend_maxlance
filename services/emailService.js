@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const crypto = require('crypto');
 const { v4: uuidv4 } = require('uuid');
 const User = require('../models/user');
 const resetTokens = {};
