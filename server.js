@@ -7,7 +7,7 @@ const item = require('./routes/item')
 app.use(cors());
 app.use(express.json())
 
-app.use(express.static('public'));
+
 app.set('view engine', 'ejs');
 
 app.get('/reset-password/:token', (req, res) => {
