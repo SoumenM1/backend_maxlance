@@ -4,9 +4,9 @@ const sequelize = new Sequelize({
   dialect: 'mysql',
   host: 'sql6.freesqldatabase.com',
   port: '3306',
-  username: 'sql6693360',
-  password: 'nz7dFy88kV',
-  database: 'sql6693360',
+  username: 'sql6696033',
+  password: '4sJ8lQfIDG',
+  database: 'sql6696033',
   logging: false // Set to true if you want to see SQL logs
 });
 
